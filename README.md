@@ -1,14 +1,11 @@
-# Python_data_processing
-Performing identical tasks from SQL queries in Python using Pandas and NumPy
-
-﻿## Project Description
-The goal of this project is to execute 5 sql queries in equivalent way using Pandas and NumPy in Python. 
+﻿## Python_data_processing
+The goal of this project is to execute 5 sql queries in equivalent way using Pandas in Python. 
 
 ## Technologies used:
 * Python
 * Pandas
-* NumPy
 * SQL
+
 ## Data set
 My analysis will be based on simplified data from the https://travel.stackexchange.com/ website, which includes the following data frames:  
 * Comments.csv.gz  
