@@ -1,6 +1,6 @@
 import sqlite3
 import pandas as pd
-from database_support import create_database_if_necessary, DATABASE
+from database_support import create_database_if_necessary, DATABASE_PATH
 
 
 def main():
@@ -15,7 +15,7 @@ def main():
 
 
 def sql_1() -> pd.DataFrame:
-    conn = sqlite3.connect(DATABASE)
+    conn = sqlite3.connect(DATABASE_PATH)
 
     query = pd.read_sql_query(
         """
@@ -34,7 +34,7 @@ def sql_1() -> pd.DataFrame:
 
 
 def sql_2() -> pd.DataFrame:
-    conn = sqlite3.connect(DATABASE)
+    conn = sqlite3.connect(DATABASE_PATH)
 
     query = pd.read_sql_query(
         """
@@ -54,7 +54,7 @@ def sql_2() -> pd.DataFrame:
 
 
 def sql_3() -> pd.DataFrame:
-    conn = sqlite3.connect(DATABASE)
+    conn = sqlite3.connect(DATABASE_PATH)
 
     query = pd.read_sql_query(
         """
@@ -78,7 +78,7 @@ def sql_3() -> pd.DataFrame:
 
 
 def sql_4() -> pd.DataFrame:
-    conn = sqlite3.connect(DATABASE)
+    conn = sqlite3.connect(DATABASE_PATH)
 
     query = pd.read_sql_query(
         """
@@ -114,7 +114,7 @@ def sql_4() -> pd.DataFrame:
 
 
 def sql_5() -> pd.DataFrame:
-    conn = sqlite3.connect(DATABASE)
+    conn = sqlite3.connect(DATABASE_PATH)
 
     query = pd.read_sql_query(
         """

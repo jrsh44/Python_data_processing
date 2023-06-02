@@ -2,16 +2,16 @@ import os, os.path
 import sqlite3
 import pandas as pd
 
-DATABASE = "resource/database.db"
+DATABASE_PATH = "resource/database.db"
 
 
 def create_database_if_necessary():
-    if not os.path.isfile(DATABASE):
+    if not os.path.isfile(DATABASE_PATH):
         Posts = read_Posts()
         Comments = read_Comments()
         Users = read_Users()
 
-        conn = sqlite3.connect(DATABASE)
+        conn = sqlite3.connect(DATABASE_PATH)
         
         if not check_table_existence("Posts") :      Posts.to_sql("Posts", conn)
         if not check_table_existence("Comments") :   Comments.to_sql("Comments", conn)
@@ -33,7 +33,7 @@ def read_Users() -> pd.DataFrame:
 
 
 def check_table_existence(table_name) -> bool:
-    conn = sqlite3.connect(DATABASE)
+    conn = sqlite3.connect(DATABASE_PATH)
     cursor = conn.cursor()
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name=?", (table_name,))
     result = cursor.fetchone()
